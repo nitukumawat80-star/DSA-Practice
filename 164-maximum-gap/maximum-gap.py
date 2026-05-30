@@ -1,9 +1,15 @@
-class Solution:
-    def maximumGap(self, nums: List[int]) -> int:
-        maxs  = 0
+class Solution(object):
+    def maximumGap(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums) < 2:
+            return 0
+        
         nums.sort()
+        maxs = 0
         for i in range(1,len(nums)):
-            diff = nums[i] - nums[i-1]
-            maxs = max(maxs, diff)
+            maxs =  max(maxs,nums[i] - nums[i-1])
         return maxs
         
