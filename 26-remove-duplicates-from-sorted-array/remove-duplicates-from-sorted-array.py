@@ -4,12 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        lists = []
-        for i in range(len(nums)):
-            if nums[i] not in lists:
-                lists.append(nums[i])
-
-        for j in range(len(lists)):
-            nums[j] = lists[j]
-        
-        return len(lists)
+        l = 1
+        for n in range(1,len(nums)):
+            if nums[n] != nums[n-1]:
+                nums[l] = nums[n]
+                l += 1
+        return l
