@@ -6,6 +6,15 @@ class Solution(object):
         """
         x = s.strip().split()
 
-        rev = x[::-1]
-        rev = " ".join(rev)
+        i = 0
+        j = len(x) - 1
+
+        while j > i:
+            x[i] , x[j] = x[j] , x[i]
+            i += 1
+            j -= 1
+
+        rev = " ".join(x)
         return rev
+
+       
