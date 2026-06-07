@@ -1,14 +1,47 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
 
-        lists = []
+        def firstPos():
+
+            l , r = 0 , len(nums)-1
+            ans = -1
+
+            while r >= l:
+                mid = (l + r) // 2
+
+                if nums[mid] == target:
+                    ans = mid
+                    r = mid - 1
+
+                elif nums[mid] < target:
+                    l = mid + 1
+
+                else:
+                    r = mid - 1
+
+            return ans
+
+        def endPos():
+
+            l , r = 0 , len(nums) - 1
+            ans = -1
+
+            while r >= l:
+
+                mid = (l+r) // 2
+
+                if nums[mid] == target:
+                    ans = mid
+                    l = mid + 1
+
+                elif nums[mid] < target:
+                    l = mid + 1
+
+                else:
+                    r = mid - 1
+
+            return ans
+        return [firstPos() , endPos()]
 
 
-        for i in range(len(nums)):
-                if nums[i] == target:
-                    lists.append(i)
-
-        if len(lists) == 0:
-                return [-1,-1]
-
-        return [lists[0] , lists[-1]]
+            
