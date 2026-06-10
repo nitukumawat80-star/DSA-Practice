@@ -1,14 +1,11 @@
-class Solution(object):
-    def isPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        newlist = ""
-        for ch in s:
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        new = ""
+
+        for ch in ((s)):
             if ch.isalnum():
-                newlist = newlist + ch.lower()
+                new = new + ch.lower()
 
-
-        return newlist == newlist[::-1]       
+        return new == new[::-1]
+            
         
