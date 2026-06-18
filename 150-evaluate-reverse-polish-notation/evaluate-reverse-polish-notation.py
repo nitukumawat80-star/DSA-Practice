@@ -14,11 +14,10 @@ class Solution:
                 elif t == '*':
                     stack.append(a*b)
                 else:
-                    division = a / b
-                    if division < 0:
-                        stack.append(ceil(division))
-                    else:
-                        stack.append(floor(division))
+                    division = int(a / b)
+                    
+                    stack.append((division))
+                   
 
             else:
                 stack.append(int(t))
