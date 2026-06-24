@@ -7,11 +7,10 @@ class Solution:
         for i in range(len(p)):
             pcount[p[i]] = pcount.get(p[i] , 0) + 1
             scount[s[i]] = scount.get(s[i] , 0) + 1
-
+        rev = []
         if pcount == scount:
-            rev = [0]
-        else:
-            rev = []
+            rev.append(0)
+        
 
         l = 0
         for i in range(len(p) , len(s)): 
